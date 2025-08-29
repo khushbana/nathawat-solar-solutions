@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nathawat Solar Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f3e5f5, #fce4ec);
+      animation: gradientMove 10s ease infinite alternate;
+      background-size: 200% 200%;
+      min-height: 100vh;
+    }
+    section {
+      padding: 5rem 2rem;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .hero {
+      background: linear-gradient(to right, #ce93d8, #f48fb1);
+      color: #fff;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      animation: pop 1s ease-out;
+    }
+    .hero h2 {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+    .specialization {
+      background: linear-gradient(to right, #f8bbd0, #e1bee7);
+    }
+    .specialization h3 {
+      font-size: 2rem;
+      color: #6a1b9a;
+    }
+    .specialization ul {
+      list-style: square;
+      text-align: left;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+      color: #4a148c;
+    }
+    .contact {
+      background: linear-gradient(to right, #d1c4e9, #f3e5f5);
+    }
+    .contact p {
+      max-width: 800px;
+      margin: 1rem auto;
+      color: #4a148c;
+      font-size: 1.1rem;
+    }
+    .contact a {
+      color: #6a1b9a;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    .whatsapp-btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.8rem 2rem;
+      background-color: #ab47bc;
+      color: white;
+      font-weight: bold;
+      border-radius: 2rem;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    .whatsapp-btn:hover {
+      background-color: #8e24aa;
+      transform: scale(1.05);
+    }
+    .tagline {
+      background: #f3e5f5;
+      color: #4a148c;
+      font-weight: 600;
+      font-size: 1.6rem;
+      transform: rotate(-2deg);
+      padding: 3rem;
+    }
+    .footer {
+      background: #6a1b9a;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      font-size: 1rem;
+    }
+    @keyframes pop {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .hero h2 {
+        font-size: 1.4rem;
+      }
+      .specialization ul {
+        padding-left: 1rem;
+      }
+      .contact p {
+        font-size: 1rem;
+      }
+      .tagline {
+        font-size: 1.2rem;
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1>NATHAWAT SOLAR SOLUTIONS</h1>
+    <h2>BY RAVINDRA SINGH NATHAWAT</h2>
+  </section>
+
+  <section class="specialization">
+    <h3>We specialize in:</h3>
+    <ul>
+      <li>Project Costing & Estimation</li>
+      <li>Solar Project Bid Estimation</li>
+      <li>Solar Project Design</li>
+      <li>Manpower & Vendor Management</li>
+    </ul>
+  </section>
+
+  <section class="contact">
+    <p>If you are looking for expert consultancy services or are interested in investing in a solar project, we would be delighted to collaborate with you.</p>
+    <p>Let’s join hands to build a greener and more sustainable India!</p>
+    <p><strong>📧 Email:</strong> ravindranathawat@gmail.com</p>
+    <p><strong>📞 Phone/WhatsApp:</strong> <a href="https://wa.me/919664284141" target="_blank">9664284141</a></p>
+    <a href="https://wa.me/919664284141" target="_blank" class="whatsapp-btn">📲 Message on WhatsApp</a>
+  </section>
+
+  <section class="tagline">
+    "Every home deserves a free electricity"
+  </section>
+
+  <footer class="footer">
+    © 2025 Nathawat Solar Solutions. All rights reserved.
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
